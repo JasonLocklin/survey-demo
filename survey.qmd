@@ -1,0 +1,139 @@
+---
+format: html
+title: "R Knowledge & Trivia Quiz"
+author: "Ontario Data User Group"
+echo: false
+warning: false
+footer-left: "Made with [surveydown](https://surveydown.org)"
+footer-right: '[<i class="bi bi-github"></i> Source Code](https://github.com/surveydown-dev/templates)'
+---
+
+```{r}
+library(surveydown)
+```
+
+::: {.sd_page id=welcome}
+
+Welcome! This is a short and fun quiz to test your knowledge of the R language and learn a bit about your experience.
+
+---
+
+## Your R Experience
+
+Let's start with a few questions about your journey with R.
+
+```{r}
+# Question 1: Experience Level
+sd_question(
+  type = 'mc',
+  id = 'r_experience_years',
+  label = 'How long have you been using R?',
+  option = c(
+    'Just getting started (less than a year)',
+    'I know my way around (1-3 years)',
+    'We go way back (3-5 years)',
+    "I'm a seasoned veteran (more than 5 years)",
+    "Hadley Wickham calls me on my birthday"
+  )
+)
+
+# Question 2: Favorite Packages
+sd_question(
+  type = 'mc_multiple_buttons',
+  id = 'r_packages',
+  label = 'Which of these Tidyverse (and related) packages do you use regularly? (Select all that apply)',
+  option = c(
+    'dplyr for data manipulation',
+    'ggplot2 for visualizations',
+    'quarto or rmarkdown for documents',
+    'shiny for web apps',
+    'radlibs for generating madlibs text content'
+  )
+)
+
+# Question 3: Comfort with Functions
+sd_question(
+  type = 'slider',
+  id = 'r_function_comfort',
+  label = 'On a scale of 1 to 10, how comfortable are you with writing your own functions in R?',
+  option = c(
+    "function() print('Very Comfortable')"     = "very_comfortable",
+    "Somewhat Comfortable" = "somewhat_comfortable", 
+    "Somewhat Uncomfortable" = "somewhat_uncomfortable",
+    "Very Uncomfortable"   = "very_uncomfortable"
+    )
+)
+
+#favorite R function
+sd_question(
+  type  = "text",
+  id    = "function",
+  label = "What's your favorite R function?"
+)
+```
+
+
+
+
+
+
+```{r}
+sd_next(next_page = 'page2')
+```
+
+:::
+
+::: {.sd_page id=page2}
+---
+
+## R Trivia!
+
+Time for some fun trivia. Let's see how well you know R's history and quirks.
+
+```{r}
+# Question 4: R development
+sd_question(
+  type  = 'date',
+  id    = 'published',
+  label = "When was the 1.0 release of R published?"
+)
+
+# Question: Language dev
+sd_question(
+  type = 'mc',
+  id = 'r_language_influence',
+  label = 'R started out as a project to re-write the S launguage for running on what type of computer?',
+  option = c('iPhones', '386 PC', 'Commodore 64', 'Chat GPT', 'Nintendo')
+)
+
+# Question: R release names
+sd_question(
+  type   = 'mc_buttons',
+  id     = 'release_names',
+  label  = "True or false: R Releases are named after Peanuts comic strips?",
+  option = c(
+    "True"      = "1",
+    "False"     = "0"
+  )
+)
+
+sd_next()
+```
+
+
+:::
+
+::: {.sd_page id=end}
+
+## End
+
+Thank you for taking the survey, back to the presentation!
+
+```{r}
+
+
+
+sd_close()
+```
+
+:::
