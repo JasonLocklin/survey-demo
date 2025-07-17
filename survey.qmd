@@ -14,7 +14,10 @@ library(surveydown)
 
 ::: {.sd_page id=welcome}
 
-Welcome! This is a short and fun quiz to test your knowledge of the R language and learn a bit about your experience.
+Welcome! This is a short and fun survey/quiz to test your knowledge of the R language and learn a bit about your experience. 
+
+Note: The data recorded is publicly available. The source for this survey is
+available at [https://github.com/JasonLocklin/survey-demo](https://github.com/JasonLocklin/survey-demo)
 
 ---
 
@@ -102,7 +105,7 @@ sd_question(
 sd_question(
   type = 'mc',
   id = 'r_language_influence',
-  label = 'R started out as a project to re-write the S launguage for running on what type of computer?',
+  label = 'R started out as a project to re-write the S language for running on what type of computer?',
   option = c('iPhones', '386 PC', 'Commodore 64', 'Chat GPT', 'Nintendo')
 )
 
